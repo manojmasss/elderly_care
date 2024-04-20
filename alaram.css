@@ -1,0 +1,63 @@
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-image: url(./OIP.jfif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.clock {
+  font-size: 48px;
+  display: inline-block;
+}
+
+.digit {
+  display: inline-block;
+  width: 40px;
+  height: 60px;
+  background-color: #333;
+  color: #fff;
+  margin: 0 5px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 36px;
+  border-radius: 5px;
+  transition: background-color 0.5s ease;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blinking {
+  animation: blink 1s linear infinite;
+}
+button 
+{
+  font-size: 25px;
+  border-radius: 19px;
+  transition: 1s;
+}
+button:hover{
+  color: rgb(255, 252, 252);
+  background-color: rgb(0, 0, 0);
+  opacity: 0.5;
+}
+h1{
+  /* background-color: #130d0d; */
+  columns: 1;
+  color: rgb(240, 240, 240)
+  ;
+  font-family: cursive;
+ 
+}
+p{
+
+  color: rgb(30, 25, 25);
+  font-size: 35px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+input{
+  font-size:25px;
+}

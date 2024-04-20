@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>set time medicine</title>
+    <link rel="stylesheet" href="alaram.css">
+    <link rel="icon" href="./d_clock2.jfif">
+</head>
+<body>
+
+
+  <div class="clock">
+    <span class="digit" id="hour">00</span>:
+    <span class="digit blinking" id="minute">00</span>:
+    <span class="digit" id="second">00</span>
+</div>
+
+    <h1>Set Medicine</h1>
+    <p>Enter the time for the alarm ("10:30 AM"): <input type="time" id="userTimeInput"></p>
+    <button onclick="setAlarm()">Set Alarm</button>
+
+    <script>
+        function setAlarm() {
+            const userTimeInput = document.getElementById('userTimeInput').value;
+            const currentTime = new Date();
+            const userTime = new Date(currentTime.toDateString() + ' ' + userTimeInput);
+
+            if (isNaN(userTime.getTime())) {
+                alert('Invalid time format. Please enter a valid time (e.g., "10:30 AM").');
+                return;
+            }
+
+            const timeDifference = userTime - currentTime;
+
+            if (timeDifference > 0) {
+                setTimeout(() => {
+                    speak('That was an tablet time Sir');
+                    alert
+                    ("That was an tablet time")
+                    var userInput = prompt("Please enter some information:");
+                    if(userInput==1){
+                        alert("ok")
+                        speak("your take ")
+
+                    }
+                    else{
+                        alert("The message was sent the user")
+
+                    }
+                }, timeDifference);
+            } else {
+                speak('Alarm Missed!');
+            }
+        }
+
+        function speak(message) {
+            const synth = window.speechSynthesis;
+            const utterance = new SpeechSynthesisUtterance(message);
+            synth.speak(utterance);
+        }
+
+
+
+        
+
+
+
+        function updateClock() {
+            const hourElement = document.getElementById('hour');
+            const minuteElement = document.getElementById('minute');
+            const secondElement = document.getElementById('second');
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            
+            hourElement.textContent = hours;
+            minuteElement.textContent = minutes;
+            secondElement.textContent = seconds;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+
+
+    </script>
+</body>
+</html>
